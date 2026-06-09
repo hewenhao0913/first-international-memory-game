@@ -9,6 +9,7 @@ const symbols = [
   { id: "policy", name: "保單", role: "Policy", label: "保", bg: "#e8f5b6", accent: "#2f8f60", kind: "policy" },
   { id: "hong-kong", name: "香港", role: "HK", label: "HK", bg: "#ffd7a8", accent: "#c74631", kind: "hongKong" },
   { id: "lucas", name: "Lucas", role: "第一國際創辦人", label: "Lucas", bg: "#ffe4a8", accent: "#ba5a28", kind: "lucas" },
+  { id: "first-logo", name: "第一國際", role: "Logo", label: "FI", bg: "#f6d487", accent: "#c49a20", kind: "imageLogo", image: "assets/logos/first-international-round-logo.png" },
   { id: "zongzi", name: "肉粽", role: "端午節", label: "粽", bg: "#cfe88c", accent: "#3f7f45", kind: "zongzi" },
   { id: "dragon-boat", name: "龍舟", role: "端午節", label: "龍", bg: "#ffd176", accent: "#c83f2f", kind: "dragonBoat" },
   { id: "golden-egg", name: "金雞蛋", role: "Golden Egg", label: "蛋", bg: "#ffe69a", accent: "#c98200", kind: "goldenEgg" },
@@ -104,11 +105,21 @@ function symbolSvg(item) {
       <text x="68" y="86" text-anchor="middle" font-size="56" font-weight="900" fill="#fff6c7" font-family="Arial Rounded MT Bold, Arial">${label}</text>
     `,
     lucas: `
-      <circle cx="68" cy="61" r="39" fill="#fff4cf" stroke="${accent}" stroke-width="6"/>
-      <path d="M43 66c8-19 23-28 45-25-2 9-6 17-14 23 12 1 22 6 31 16-15 11-32 14-51 8-10-3-17-10-11-22z" fill="#f2a900" opacity="0.86"/>
-      <rect x="29" y="91" width="78" height="27" rx="13" fill="#fff7d7" stroke="${accent}" stroke-width="4"/>
-      <text x="68" y="111" text-anchor="middle" font-size="25" font-weight="900" text-decoration="none" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">Lucas</text>
-      <circle cx="101" cy="38" r="12" fill="#f2a900"/>
+      <circle cx="68" cy="40" r="24" fill="#e6a77f" stroke="#fff1c6" stroke-width="5"/>
+      <path d="M43 39c4-20 19-30 38-25 11 3 18 12 20 25-12-8-25-8-39-2-8 3-14 4-19 2z" fill="#2f251f"/>
+      <path d="M48 52c7 7 31 7 39 0-3 18-35 18-39 0z" fill="#d8906d" opacity=".35"/>
+      <circle cx="58" cy="42" r="3.2" fill="#2b2522"/>
+      <circle cx="78" cy="42" r="3.2" fill="#2b2522"/>
+      <path d="M58 53c6 6 16 6 22 0" fill="none" stroke="#8a4c3c" stroke-width="3" stroke-linecap="round"/>
+      <path d="M31 104c7-27 21-41 37-41s30 14 37 41H31z" fill="#143f35"/>
+      <path d="M46 104c5-18 13-27 22-27s17 9 22 27H46z" fill="#fff7d7"/>
+      <path d="M63 78l5 19 6-19" fill="#c49a20"/>
+      <rect x="29" y="96" width="78" height="25" rx="12" fill="#fff7d7" stroke="${accent}" stroke-width="4"/>
+      <text x="68" y="114" text-anchor="middle" font-size="23" font-weight="900" text-decoration="none" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">Lucas</text>
+    `,
+    imageLogo: `
+      <image href="${escapeHtml(item.image)}" x="18" y="14" width="100" height="100" preserveAspectRatio="xMidYMid meet"/>
+      <circle cx="68" cy="64" r="47" fill="none" stroke="${accent}" stroke-width="5" opacity=".45"/>
     `,
     zongzi: `
       <path d="M68 21 111 103H25L68 21z" fill="#4f8a42"/>
