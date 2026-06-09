@@ -658,13 +658,23 @@ function showLevelWin(timeBonus) {
   const nextCardCount = nextPairCount * 2;
   renderWinStars(getStarRating(level, state.seconds));
   els.modalTitle.textContent = isLast ? "FINAL LEVEL" : `LEVEL ${nextLevelIndex + 1}`;
-  els.modalText.textContent = `目前分數 ${state.score.toLocaleString("en-US")} ｜ 時間獎勵 +${timeBonus.toLocaleString("en-US")}`;
+  els.modalText.replaceChildren(
+    createTextLine("score-summary", `目前分數 ${state.score.toLocaleString("en-US")}`),
+    createTextLine("time-bonus", `時間獎勵 +${timeBonus.toLocaleString("en-US")}`)
+  );
   els.challengeCopy.textContent = challengeMessages[state.levelIndex] || challengeMessages[challengeMessages.length - 1];
   els.modalBrief.textContent = isLast
     ? `全部關卡完成 ｜ 最終分數 ${state.score.toLocaleString("en-US")}`
     : `下一關 ${nextLevel.rows} x ${nextLevel.cols} ｜ ${nextCardCount} 張 ｜ 限時 ${nextLevel.time} 秒`;
   els.continueButton.textContent = isLast ? "✓ 重新挑戰" : "✓ 下一關";
   els.modal.classList.remove("hidden");
+}
+
+function createTextLine(className, text) {
+  const line = document.createElement("span");
+  line.className = className;
+  line.textContent = text;
+  return line;
 }
 
 function endGame(kicker, title, text) {
