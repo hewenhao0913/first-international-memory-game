@@ -86,6 +86,7 @@ const els = {
   levelGrid: document.querySelector("#levelGrid"),
   messageBar: document.querySelector("#messageBar"),
   modal: document.querySelector("#modal"),
+  winStars: document.querySelector(".win-stars"),
   modalKicker: document.querySelector("#modalKicker"),
   modalTitle: document.querySelector("#modalTitle"),
   modalText: document.querySelector("#modalText"),
@@ -625,17 +626,35 @@ function clearSelection() {
   els.board.classList.remove("locked");
 }
 
+function getStarRating(level, secondsLeft) {
+  const ratio = Math.max(0, Math.min(1, secondsLeft / level.time));
+  return Math.max(0.5, Math.ceil(ratio * 6) / 2);
+}
+
+function renderWinStars(rating) {
+  els.winStars.innerHTML = "";
+  for (let index = 0; index < 3; index += 1) {
+    const fill = Math.max(0, Math.min(1, rating - index));
+    const star = document.createElement("span");
+    star.className = "rating-star";
+    star.style.setProperty("--fill", String(fill));
+    els.winStars.append(star);
+  }
+}
+
 function showLevelWin(timeBonus) {
   clearInterval(state.timerId);
   state.locked = true;
   els.board.classList.add("locked");
   els.modal.classList.add("level-briefing");
   els.modalKicker.textContent = "LEVEL WIN";
+  const level = levels[state.levelIndex];
   const isLast = state.levelIndex === levels.length - 1;
   const nextLevelIndex = isLast ? state.levelIndex : state.levelIndex + 1;
   const nextLevel = levels[nextLevelIndex];
   const nextPairCount = getPairCount(nextLevel);
   const nextCardCount = nextPairCount * 2;
+  renderWinStars(getStarRating(level, state.seconds));
   els.modalTitle.textContent = isLast ? "FINAL LEVEL" : `LEVEL ${nextLevelIndex + 1}`;
   els.modalText.textContent = `目前分數 ${state.score.toLocaleString("en-US")} ｜ 時間獎勵 +${timeBonus.toLocaleString("en-US")}`;
   els.challengeCopy.textContent = challengeMessages[state.levelIndex] || challengeMessages[challengeMessages.length - 1];
@@ -653,6 +672,7 @@ function endGame(kicker, title, text) {
   els.modal.classList.remove("level-briefing");
   saveProgress(state.levelIndex);
   els.modalKicker.textContent = kicker;
+  renderWinStars(0);
   els.modalTitle.textContent = title;
   els.modalText.textContent = text;
   els.challengeCopy.textContent = "再挑戰一次，把每一步都準備好。";
