@@ -6,8 +6,8 @@ const symbols = [
   { id: "twd", name: "台幣", role: "TWD", label: "NT$", bg: "#f5d773", accent: "#1f8b6d", kind: "currency" },
   { id: "cny", name: "人民幣", role: "CNY", label: "¥", bg: "#ffd089", accent: "#c5392b", kind: "currency" },
   { id: "krw", name: "韓元", role: "KRW", label: "₩", bg: "#f7e08d", accent: "#2f72b8", kind: "currency" },
-  { id: "btc", name: "比特幣", role: "BTC", label: "₿", bg: "#ffcf63", accent: "#b86d00", kind: "coin" },
-  { id: "eth", name: "以太坊", role: "ETH", label: "Ξ", bg: "#ddd8ff", accent: "#5b57b7", kind: "gem" },
+  { id: "policy", name: "保單", role: "Policy", label: "保", bg: "#e8f5b6", accent: "#2f8f60", kind: "policy" },
+  { id: "hong-kong", name: "香港", role: "HK", label: "HK", bg: "#ffd7a8", accent: "#c74631", kind: "hongKong" },
   { id: "lucas", name: "Lucas", role: "英文名", label: "Lucas", bg: "#ffe4a8", accent: "#ba5a28", kind: "lucas" },
   { id: "zongzi", name: "肉粽", role: "端午節", label: "粽", bg: "#cfe88c", accent: "#3f7f45", kind: "zongzi" },
   { id: "dragon-boat", name: "龍舟", role: "端午節", label: "龍", bg: "#ffd176", accent: "#c83f2f", kind: "dragonBoat" },
@@ -133,6 +133,19 @@ function symbolSvg(item) {
       <rect x="32" y="59" width="72" height="42" rx="5" fill="#fff4cf"/>
       <path d="M39 65v30M58 65v30M78 65v30M97 65v30" stroke="${accent}" stroke-width="6"/>
       <text x="68" y="121" text-anchor="middle" font-size="17" font-weight="900" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">BANK</text>
+    `,
+    policy: `
+      <rect x="34" y="28" width="68" height="88" rx="10" fill="#fff7d7" stroke="${accent}" stroke-width="6"/>
+      <path d="M48 52h40M48 68h40M48 84h26" stroke="${accent}" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+      <circle cx="91" cy="94" r="15" fill="#f2a900"/>
+      <path d="M84 94l5 5 10-12" fill="none" stroke="#fff7d7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="68" y="122" text-anchor="middle" font-size="16" font-weight="900" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">POLICY</text>
+    `,
+    hongKong: `
+      <circle cx="68" cy="68" r="43" fill="#c74631"/>
+      <path d="M68 33c8 16 3 27-12 34 18-1 27 8 25 27 9-15 22-18 38-8-9-14-8-27 5-39-17 4-28-2-34-18-5 16-16 21-22 4z" fill="#fff2cf" opacity="0.95"/>
+      <circle cx="68" cy="68" r="12" fill="#f2a900"/>
+      <text x="68" y="124" text-anchor="middle" font-size="18" font-weight="900" fill="#c74631" font-family="Arial Rounded MT Bold, Arial">HK</text>
     `,
     globe: `
       <circle cx="68" cy="68" r="42" fill="#d8f6ee" stroke="${accent}" stroke-width="7"/>
