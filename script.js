@@ -70,6 +70,7 @@ const els = {
   streakText: document.querySelector("#streakText"),
   roundText: document.querySelector("#roundText"),
   levelBadge: document.querySelector("#levelBadge"),
+  levelArt: document.querySelector("#levelArt"),
   levelGrid: document.querySelector("#levelGrid"),
   messageBar: document.querySelector("#messageBar"),
   modal: document.querySelector("#modal"),
@@ -103,10 +104,11 @@ function symbolSvg(item) {
       <text x="68" y="86" text-anchor="middle" font-size="56" font-weight="900" fill="#fff6c7" font-family="Arial Rounded MT Bold, Arial">${label}</text>
     `,
     lucas: `
-      <path d="M23 95c12-36 30-54 54-54 17 0 29 7 36 20 7 13 7 28 0 45H23z" fill="#fff4cf"/>
-      <path d="M30 94c11-27 26-40 46-40 17 0 29 10 36 30" fill="none" stroke="${accent}" stroke-width="8" stroke-linecap="round"/>
-      <text x="68" y="80" text-anchor="middle" font-size="27" font-weight="900" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">Lucas</text>
-      <circle cx="102" cy="44" r="13" fill="#f2a900"/>
+      <circle cx="68" cy="61" r="39" fill="#fff4cf" stroke="${accent}" stroke-width="6"/>
+      <path d="M43 66c8-19 23-28 45-25-2 9-6 17-14 23 12 1 22 6 31 16-15 11-32 14-51 8-10-3-17-10-11-22z" fill="#f2a900" opacity="0.86"/>
+      <rect x="29" y="91" width="78" height="27" rx="13" fill="#fff7d7" stroke="${accent}" stroke-width="4"/>
+      <text x="68" y="111" text-anchor="middle" font-size="25" font-weight="900" text-decoration="none" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">Lucas</text>
+      <circle cx="101" cy="38" r="12" fill="#f2a900"/>
     `,
     zongzi: `
       <path d="M68 21 111 103H25L68 21z" fill="#4f8a42"/>
@@ -259,6 +261,97 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+const levelArtKinds = [
+  "dragonBoatScene",
+  "zongziScene",
+  "goldenEggScene",
+  "dollarScene",
+  "dragonHeadScene",
+  "audScene",
+  "policyScene",
+  "hongKongScene"
+];
+
+function levelArtSvg(kind) {
+  const art = {
+    dragonBoatScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="boatBody" x1="0" x2="1"><stop stop-color="#b73a2a"/><stop offset="1" stop-color="#e19a38"/></linearGradient>
+          <linearGradient id="water" x1="0" x2="1"><stop stop-color="#1e6f74"/><stop offset="1" stop-color="#7fd0b7"/></linearGradient>
+        </defs>
+        <ellipse cx="78" cy="100" rx="62" ry="12" fill="url(#water)" opacity=".78"/>
+        <path d="M18 73c31 23 87 23 116 0-5 21-25 33-58 35-34 2-54-11-58-35z" fill="url(#boatBody)" stroke="#fff0bd" stroke-width="4"/>
+        <path d="M105 42c16-14 27-14 36-2-11 1-19 8-23 22" fill="none" stroke="#c83f2f" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="112" cy="47" r="7" fill="#fff5d0"/>
+        <path d="M35 70h61" stroke="#fff7d7" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+    `,
+    zongziScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <defs><linearGradient id="leafGrad" x1="0" x2="1"><stop stop-color="#2f7a46"/><stop offset="1" stop-color="#b8d66a"/></linearGradient></defs>
+        <ellipse cx="76" cy="102" rx="50" ry="11" fill="#123d31" opacity=".35"/>
+        <path d="M75 15 128 103H22L75 15z" fill="url(#leafGrad)" stroke="#fff1c6" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M32 101c27-32 57-55 91-71" stroke="#fff6cf" stroke-width="8" stroke-linecap="round"/>
+        <path d="M56 88c9-20 20-38 34-55" stroke="#2f6f3c" stroke-width="5" stroke-linecap="round" opacity=".62"/>
+      </svg>
+    `,
+    goldenEggScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <defs><radialGradient id="eggGrad" cx=".35" cy=".25"><stop stop-color="#fff7bf"/><stop offset=".55" stop-color="#f2b92f"/><stop offset="1" stop-color="#b77400"/></radialGradient></defs>
+        <ellipse cx="78" cy="101" rx="44" ry="10" fill="#6b3b11" opacity=".3"/>
+        <ellipse cx="78" cy="62" rx="34" ry="48" fill="url(#eggGrad)" stroke="#fff0a6" stroke-width="7"/>
+        <ellipse cx="65" cy="42" rx="12" ry="17" fill="#fff7d7" opacity=".72"/>
+        <path d="M37 91c23 18 57 19 83 1" stroke="#8f5506" stroke-width="6" stroke-linecap="round" fill="none" opacity=".55"/>
+      </svg>
+    `,
+    dollarScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <rect x="24" y="34" width="102" height="60" rx="11" fill="#dff1cf" stroke="#fff3c9" stroke-width="6"/>
+        <circle cx="75" cy="64" r="21" fill="#fff7d7" stroke="#2f7a55" stroke-width="5"/>
+        <text x="75" y="79" text-anchor="middle" font-size="38" font-weight="900" fill="#2f7a55" font-family="Arial Rounded MT Bold, Arial">$</text>
+        <circle cx="44" cy="64" r="8" fill="#2f7a55" opacity=".76"/>
+        <circle cx="106" cy="64" r="8" fill="#2f7a55" opacity=".76"/>
+      </svg>
+    `,
+    dragonHeadScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <path d="M28 75c3-31 26-53 61-51 20 1 36 13 47 32-15-7-28-5-38 3 17 8 27 21 28 39-22-9-39-7-53 4-21 15-42 8-45-27z" fill="#c83f2f" stroke="#fff0bd" stroke-width="4"/>
+        <path d="M48 46c-5-14-1-27 13-38 0 18 8 28 23 33" fill="#f2a900"/>
+        <path d="M91 42c11-16 27-21 47-15-15 10-21 21-19 36" fill="#f2a900"/>
+        <circle cx="92" cy="61" r="8" fill="#fff7d7"/>
+        <circle cx="95" cy="61" r="3.5" fill="#253326"/>
+        <path d="M47 82c22 10 45 10 68 0" stroke="#fff7d7" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+    `,
+    audScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <circle cx="75" cy="65" r="43" fill="#f2b934" stroke="#fff0a6" stroke-width="7"/>
+        <circle cx="75" cy="65" r="30" fill="none" stroke="#2f7a70" stroke-width="5" opacity=".55"/>
+        <text x="75" y="80" text-anchor="middle" font-size="36" font-weight="900" fill="#2f7a70" font-family="Arial Rounded MT Bold, Arial">A$</text>
+        <path d="M39 102c24 11 51 11 73 0" stroke="#8a550b" stroke-width="6" stroke-linecap="round" opacity=".45"/>
+      </svg>
+    `,
+    policyScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <rect x="41" y="18" width="70" height="88" rx="10" fill="#fff7d7" stroke="#2f8f60" stroke-width="6"/>
+        <path d="M55 45h42M55 61h42M55 77h28" stroke="#2f8f60" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="101" cy="89" r="15" fill="#f2a900"/>
+        <path d="M94 89l5 5 10-12" fill="none" stroke="#fff7d7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `,
+    hongKongScene: `
+      <svg viewBox="0 0 150 120" aria-hidden="true">
+        <circle cx="75" cy="63" r="44" fill="#c74631" stroke="#fff0bd" stroke-width="6"/>
+        <path d="M75 27c9 17 4 29-12 36 19-1 29 9 27 29 10-17 24-20 41-9-10-15-9-29 5-42-18 5-30-2-37-19-5 17-17 23-24 5z" fill="#fff2cf"/>
+        <circle cx="75" cy="63" r="12" fill="#f2a900"/>
+      </svg>
+    `
+  };
+
+  return art[kind] || art.dragonBoatScene;
+}
+
 function loadProgress() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
@@ -387,6 +480,7 @@ function updateStats() {
   els.streakText.textContent = String(state.streak);
   els.roundText.textContent = `${level.rows} x ${level.cols} ｜ ${playableCards} 張 ｜ ${pairCount} 對 ｜ 失誤上限 ${level.maxMiss}`;
   els.levelBadge.textContent = `LEVEL ${state.levelIndex + 1}`;
+  els.levelArt.innerHTML = levelArtSvg(levelArtKinds[state.levelIndex % levelArtKinds.length]);
   renderLevels();
 }
 
