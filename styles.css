@@ -1395,24 +1395,26 @@ button {
   }
 
   .modal-backdrop {
-    padding: 8px;
+    padding: 6px;
   }
 
   .modal-backdrop.level-briefing .modal-panel {
-    min-height: calc(100dvh - 16px);
-    gap: 7px;
-    padding: 12px 9px 10px;
-    border-radius: 18px;
+    min-height: 0;
+    max-height: calc(100dvh - 12px);
+    gap: 6px;
+    padding: 10px 8px 9px;
+    border-radius: 16px;
     align-content: center;
+    overflow: hidden;
   }
 
   .modal-backdrop.level-briefing .win-stars {
-    font-size: 42px;
+    font-size: 38px;
     line-height: 0.9;
   }
 
   .modal-backdrop.level-briefing h2 {
-    font-size: 38px;
+    font-size: 34px;
     line-height: 0.95;
   }
 
@@ -1422,18 +1424,18 @@ button {
 
   .modal-backdrop.level-briefing #modalText {
     gap: 2px;
-    padding: 8px 10px;
-    border-radius: 14px;
-    border-width: 3px;
-    font-size: 19px;
-    box-shadow: 0 4px 0 rgba(116, 67, 31, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.68);
+    padding: 7px 9px;
+    border-radius: 12px;
+    border-width: 2px;
+    font-size: 18px;
+    box-shadow: 0 3px 0 rgba(116, 67, 31, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.68);
   }
 
   .modal-backdrop.level-briefing .challenge-copy {
-    padding: 8px 10px;
+    padding: 7px 9px;
     border-radius: 12px;
-    font-size: 14px;
-    line-height: 1.2;
+    font-size: 13px;
+    line-height: 1.16;
   }
 
   .modal-brief {
@@ -1444,9 +1446,9 @@ button {
   }
 
   .modal-purpose {
-    padding: 5px 7px;
-    font-size: 10px;
-    line-height: 1.2;
+    padding: 4px 6px;
+    font-size: 9px;
+    line-height: 1.15;
   }
 
   .modal-actions {
@@ -1455,12 +1457,12 @@ button {
 
   .modal-backdrop.level-briefing .modal-actions .primary-button,
   .modal-backdrop.level-briefing .modal-actions .danger-button {
-    width: calc((100vw - 38px) / 2);
+    width: calc((100vw - 34px) / 2);
     min-width: 0;
     max-width: 174px;
-    min-height: 54px;
-    padding: 9px 8px 11px;
-    font-size: 18px;
+    min-height: 48px;
+    padding: 7px 8px 9px;
+    font-size: 17px;
     border-width: 3px;
   }
 
@@ -1469,5 +1471,66 @@ button {
     min-height: 44px;
     padding-inline: 16px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) and (max-height: 700px) {
+  .modal-backdrop.level-briefing .modal-panel {
+    gap: 4px;
+    padding: 8px 7px 7px;
+  }
+
+  .modal-backdrop.level-briefing .win-stars {
+    font-size: 30px;
+  }
+
+  .modal-backdrop.level-briefing .panel-title {
+    min-width: 120px;
+    padding: 5px 16px;
+    border-radius: 14px;
+    font-size: 15px;
+  }
+
+  .modal-backdrop.level-briefing h2 {
+    font-size: 28px;
+  }
+
+  .modal-backdrop.level-briefing #modalText {
+    padding: 5px 7px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .modal-backdrop.level-briefing .challenge-copy {
+    padding: 5px 7px;
+    font-size: 11px;
+    line-height: 1.12;
+  }
+
+  .modal-backdrop.level-briefing .modal-brief {
+    padding: 3px 6px;
+    border-radius: 8px;
+    font-size: 7px;
+  }
+
+  .modal-backdrop.level-briefing .modal-purpose {
+    padding: 3px 5px;
+    font-size: 7.5px;
+    line-height: 1.1;
+  }
+
+  .modal-backdrop.level-briefing .modal-actions {
+    gap: 5px;
+  }
+
+  .modal-backdrop.level-briefing .modal-actions .primary-button,
+  .modal-backdrop.level-briefing .modal-actions .danger-button {
+    width: calc((100vw - 28px) / 2);
+    max-width: 170px;
+    min-height: 38px;
+    padding: 5px 7px 6px;
+    font-size: 14px;
+    border-width: 2px;
+    box-shadow: 0 5px 0 rgba(26, 61, 69, 0.2);
   }
 }
