@@ -84,10 +84,10 @@ button {
 .brand-logo-pair {
   display: grid;
   place-items: center;
-  width: 96px;
-  height: 56px;
+  width: 104px;
+  height: 64px;
   border-radius: 18px;
-  padding: 5px;
+  padding: 4px 6px;
   background: linear-gradient(#fff6dd, #dfb760);
   border: 3px solid rgba(255, 245, 219, 0.9);
   box-shadow: inset 0 -4px 0 rgba(122, 74, 32, 0.14);
@@ -96,8 +96,10 @@ button {
 .brand-logo-pair img {
   display: block;
   width: 100%;
-  max-height: 46px;
+  height: 100%;
+  max-height: 54px;
   object-fit: contain;
+  object-position: center;
 }
 
 .brand-badge p,
@@ -983,10 +985,10 @@ button {
   }
 
   .brand-logo-pair {
-    width: 72px;
-    height: 38px;
+    width: 82px;
+    height: 44px;
     border-radius: 12px;
-    padding: 4px;
+    padding: 3px 5px;
   }
 
   .brand-badge p {
