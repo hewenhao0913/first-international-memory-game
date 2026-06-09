@@ -71,6 +71,7 @@ const els = {
   modalKicker: document.querySelector("#modalKicker"),
   modalTitle: document.querySelector("#modalTitle"),
   modalText: document.querySelector("#modalText"),
+  modalBrief: document.querySelector("#modalBrief"),
   continueButton: document.querySelector("#continueButton"),
   quitButton: document.querySelector("#quitButton"),
   newGameButton: document.querySelector("#newGameButton"),
@@ -462,10 +463,18 @@ function showLevelWin(timeBonus) {
   clearInterval(state.timerId);
   state.locked = true;
   els.board.classList.add("locked");
+  els.modal.classList.add("level-briefing");
   els.modalKicker.textContent = "LEVEL WIN";
-  els.modalTitle.textContent = `第 ${state.levelIndex + 1} 關完成`;
   const isLast = state.levelIndex === levels.length - 1;
-  els.modalText.textContent = `時間獎勵 +${timeBonus.toLocaleString("en-US")} ｜ 總分 ${state.score.toLocaleString("en-US")}`;
+  const nextLevelIndex = isLast ? state.levelIndex : state.levelIndex + 1;
+  const nextLevel = levels[nextLevelIndex];
+  const nextPairCount = getPairCount(nextLevel);
+  const nextCardCount = nextPairCount * 2;
+  els.modalTitle.textContent = isLast ? "FINAL LEVEL" : `LEVEL ${nextLevelIndex + 1}`;
+  els.modalText.textContent = `目前分數 ${state.score.toLocaleString("en-US")} ｜ 時間獎勵 +${timeBonus.toLocaleString("en-US")}`;
+  els.modalBrief.textContent = isLast
+    ? `全部關卡完成 ｜ 最終分數 ${state.score.toLocaleString("en-US")}`
+    : `下一關 ${nextLevel.rows} x ${nextLevel.cols} ｜ ${nextCardCount} 張 ｜ 限時 ${nextLevel.time} 秒`;
   els.continueButton.textContent = isLast ? "✓ 重新挑戰" : "✓ 下一關";
   els.modal.classList.remove("hidden");
 }
@@ -474,10 +483,12 @@ function endGame(kicker, title, text) {
   clearInterval(state.timerId);
   state.locked = true;
   els.board.classList.add("locked");
+  els.modal.classList.remove("level-briefing");
   saveProgress(state.levelIndex);
   els.modalKicker.textContent = kicker;
   els.modalTitle.textContent = title;
   els.modalText.textContent = text;
+  els.modalBrief.textContent = `目前分數 ${state.score.toLocaleString("en-US")}`;
   els.continueButton.textContent = "✓ 重新開始";
   els.modal.classList.remove("hidden");
 }

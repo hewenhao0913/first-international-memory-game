@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第一國際端午金融翻牌</title>
-    <link rel="stylesheet" href="styles.css?v=1" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <main class="game-shell">
       <section class="top-bar" aria-label="遊戲狀態">
         <div class="brand-badge">
-          <span class="brand-logo-pair" aria-label="第一國際與大光扶輪社 Logo">
+          <span class="brand-logo-pair" aria-label="第一國際 Logo">
             <img src="assets/logos/first-international-logo.png" alt="第一國際 Logo" />
-            <img src="assets/logos/rotary-takuang-logo.png" alt="大光扶輪社 Logo" />
           </span>
           <div>
             <p>First International Memory</p>
@@ -108,6 +107,7 @@
 
           <article class="panel mission-panel">
             <div class="panel-title">MISSIONS</div>
+            <img class="partner-logo" src="assets/logos/rotary-takuang-logo.png" alt="大光扶輪社 Logo" />
             <div class="mission-row">
               <span class="mission-icon">★</span>
               <div>
@@ -129,14 +129,15 @@
 
     <div class="modal-backdrop hidden" id="modal">
       <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="panel-title" id="modalKicker">LEVEL WIN</div>
         <div class="win-stars" aria-hidden="true">
           <span>★</span>
           <span>★</span>
           <span>★</span>
         </div>
-        <h2 id="modalTitle">第 1 關完成</h2>
-        <p id="modalText">分數 +2000</p>
+        <div class="panel-title" id="modalKicker">LEVEL WIN</div>
+        <h2 id="modalTitle">LEVEL 2</h2>
+        <p id="modalText">目前分數 2,000</p>
+        <div class="modal-brief" id="modalBrief">下一關 2 x 3 ｜ 6 張 ｜ 限時 55 秒</div>
         <div class="modal-actions">
           <button class="danger-button" id="quitButton" type="button">✕ 結束</button>
           <button class="primary-button" id="continueButton" type="button">✓ 下一關</button>
@@ -144,6 +145,6 @@
       </section>
     </div>
 
-    <script src="script.js?v=1"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>
