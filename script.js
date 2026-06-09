@@ -34,14 +34,14 @@ const symbols = [
 ];
 
 const levels = [
-  { rows: 2, cols: 2, time: 45, preview: 2800, maxMiss: 7 },
-  { rows: 2, cols: 3, time: 55, preview: 2600, maxMiss: 10 },
-  { rows: 3, cols: 4, time: 85, preview: 2400, maxMiss: 18 },
-  { rows: 4, cols: 4, time: 105, preview: 2200, maxMiss: 24 },
-  { rows: 4, cols: 5, time: 130, preview: 2000, maxMiss: 30 },
-  { rows: 5, cols: 6, time: 170, preview: 1800, maxMiss: 42 },
-  { rows: 6, cols: 6, time: 210, preview: 1600, maxMiss: 48 },
-  { rows: 6, cols: 8, time: 270, preview: 1400, maxMiss: 65 }
+  { rows: 2, cols: 2, time: 45, preview: 3000, maxMiss: 7 },
+  { rows: 2, cols: 3, time: 55, preview: 3000, maxMiss: 10 },
+  { rows: 3, cols: 4, time: 85, preview: 3000, maxMiss: 18 },
+  { rows: 4, cols: 4, time: 105, preview: 3000, maxMiss: 24 },
+  { rows: 4, cols: 5, time: 130, preview: 3000, maxMiss: 30 },
+  { rows: 5, cols: 6, time: 170, preview: 3000, maxMiss: 42 },
+  { rows: 6, cols: 6, time: 210, preview: 3000, maxMiss: 48 },
+  { rows: 6, cols: 8, time: 270, preview: 3000, maxMiss: 65 }
 ];
 
 const STORAGE_KEY = "first-international-memory-progress-v1";
@@ -75,6 +75,7 @@ const state = {
 const els = {
   board: document.querySelector("#gameBoard"),
   levelText: document.querySelector("#levelText"),
+  levelMiniText: document.querySelector("#levelMiniText"),
   scoreText: document.querySelector("#scoreText"),
   timeText: document.querySelector("#timeText"),
   matchedText: document.querySelector("#matchedText"),
@@ -497,6 +498,7 @@ function updateStats() {
   const pairCount = getPairCount(level);
   const playableCards = pairCount * 2;
   els.levelText.textContent = String(state.levelIndex + 1);
+  els.levelMiniText.textContent = `LEVEL ${state.levelIndex + 1}`;
   els.scoreText.textContent = state.score.toLocaleString("en-US");
   els.timeText.textContent = String(state.seconds);
   els.matchedText.textContent = `${state.matchedPairs}/${pairCount}`;

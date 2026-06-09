@@ -124,6 +124,7 @@ button {
 .stat-strip {
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -147,8 +148,17 @@ button {
 }
 
 .time-pill {
-  order: 4;
+  order: 99;
   min-width: 126px;
+}
+
+.level-pill small {
+  display: block;
+  margin-top: 2px;
+  color: #8b4f1c;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .stat-pill span,
@@ -163,11 +173,20 @@ button {
   display: block;
   margin-top: 2px;
   font-size: 23px;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .coin-pill {
   color: #704016;
   background: linear-gradient(#ffe9a8, #d99635);
+}
+
+.coin-pill strong {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5), 0 3px 0 rgba(122, 74, 32, 0.18);
 }
 
 .stat-strip .icon-button {
@@ -420,6 +439,7 @@ button {
 }
 
 .level-title {
+  display: none;
   min-width: 150px;
   color: #7c4720;
   background: linear-gradient(#fff2d1, #dca761);
@@ -740,15 +760,16 @@ button {
 }
 
 .purpose-line {
-  max-width: 960px;
+  max-width: none;
   margin: 12px auto 0;
   padding: 8px 14px;
   border-radius: 16px;
   color: #fff1cf;
   text-align: center;
-  font-size: 13px;
+  font-size: clamp(15px, 1.35vw, 18px);
   font-weight: 900;
-  line-height: 1.45;
+  line-height: 1.25;
+  white-space: nowrap;
   background: rgba(13, 53, 45, 0.72);
   border: 2px solid rgba(255, 241, 190, 0.5);
 }
@@ -1126,15 +1147,20 @@ button {
   }
 
   .level-pill {
-    min-width: 88px;
+    min-width: 92px;
   }
 
   .coin-pill {
-    min-width: 108px;
+    min-width: 118px;
   }
 
   .time-pill {
     min-width: 88px;
+  }
+
+  .level-pill small {
+    margin-top: 1px;
+    font-size: 8px;
   }
 
   .stat-pill span {
@@ -1144,6 +1170,11 @@ button {
   .stat-pill strong {
     margin-top: 0;
     font-size: 17px;
+  }
+
+  .coin-pill strong {
+    font-size: 20px;
+    letter-spacing: 0.2px;
   }
 
   .icon-button {
@@ -1331,10 +1362,11 @@ button {
 
   .purpose-line {
     margin-top: 6px;
-    padding: 6px 9px;
+    padding: 6px 7px;
     border-radius: 12px;
-    font-size: 10px;
-    line-height: 1.35;
+    font-size: clamp(8px, 2.05vw, 11px);
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .modal-backdrop {
