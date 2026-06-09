@@ -1188,16 +1188,17 @@ button {
   }
 
   .stat-pill span {
-    font-size: 9px;
+    font-size: 12px;
+    line-height: 1.05;
   }
 
   .stat-pill strong {
-    margin-top: 0;
-    font-size: 17px;
+    margin-top: 1px;
+    font-size: 19px;
   }
 
   .coin-pill strong {
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 0.2px;
   }
 
@@ -1394,69 +1395,73 @@ button {
   }
 
   .modal-backdrop {
-    padding: 10px;
+    padding: 8px;
   }
 
   .modal-backdrop.level-briefing .modal-panel {
-    min-height: calc(100dvh - 20px);
-    gap: 10px;
-    padding: 18px 10px 12px;
-    border-radius: 22px;
+    min-height: calc(100dvh - 16px);
+    gap: 7px;
+    padding: 12px 9px 10px;
+    border-radius: 18px;
+    align-content: center;
   }
 
   .modal-backdrop.level-briefing .win-stars {
-    font-size: 58px;
+    font-size: 42px;
+    line-height: 0.9;
   }
 
   .modal-backdrop.level-briefing h2 {
-    font-size: 56px;
+    font-size: 38px;
+    line-height: 0.95;
   }
 
   .modal-backdrop.level-briefing p {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .modal-backdrop.level-briefing #modalText {
     gap: 2px;
-    padding: 10px 12px;
-    border-radius: 16px;
+    padding: 8px 10px;
+    border-radius: 14px;
     border-width: 3px;
-    font-size: 22px;
-    box-shadow: 0 5px 0 rgba(116, 67, 31, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.68);
+    font-size: 19px;
+    box-shadow: 0 4px 0 rgba(116, 67, 31, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.68);
   }
 
   .modal-backdrop.level-briefing .challenge-copy {
-    padding: 10px 11px;
-    border-radius: 14px;
-    font-size: 18px;
-    line-height: 1.28;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.2;
   }
 
   .modal-brief {
-    padding: 5px 8px;
-    border-radius: 12px;
-    font-size: 9px;
+    padding: 4px 7px;
+    border-radius: 10px;
+    font-size: 8px;
+    line-height: 1.15;
   }
 
   .modal-purpose {
-    padding: 6px 8px;
-    font-size: 12px;
-    line-height: 1.35;
+    padding: 5px 7px;
+    font-size: 10px;
+    line-height: 1.2;
   }
 
   .modal-actions {
-    gap: 8px;
+    gap: 7px;
   }
 
   .modal-backdrop.level-briefing .modal-actions .primary-button,
   .modal-backdrop.level-briefing .modal-actions .danger-button {
-    width: calc((100vw - 44px) / 2);
+    width: calc((100vw - 38px) / 2);
     min-width: 0;
-    max-width: 178px;
-    min-height: 74px;
-    padding: 14px 10px 16px;
-    font-size: 22px;
-    border-width: 4px;
+    max-width: 174px;
+    min-height: 54px;
+    padding: 9px 8px 11px;
+    font-size: 18px;
+    border-width: 3px;
   }
 
   .modal-actions .primary-button,
