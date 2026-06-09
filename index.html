@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第一國際端午金融翻牌</title>
+    <link rel="stylesheet" href="styles.css?v=1" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="top-bar" aria-label="遊戲狀態">
+        <div class="brand-badge">
+          <span class="brand-logo-pair" aria-label="第一國際與大光扶輪社 Logo">
+            <img src="assets/logos/first-international-logo.png" alt="第一國際 Logo" />
+            <img src="assets/logos/rotary-takuang-logo.png" alt="大光扶輪社 Logo" />
+          </span>
+          <div>
+            <p>First International Memory</p>
+            <h1>第一國際端午翻牌</h1>
+          </div>
+        </div>
+
+        <div class="stat-strip">
+          <div class="stat-pill">
+            <span>關卡</span>
+            <strong id="levelText">1</strong>
+          </div>
+          <div class="stat-pill coin-pill">
+            <span>分數</span>
+            <strong id="scoreText">0</strong>
+          </div>
+          <div class="stat-pill">
+            <span>時間</span>
+            <strong id="timeText">60</strong>
+          </div>
+          <button class="icon-button" id="pauseButton" type="button" aria-label="暫停">Ⅱ</button>
+        </div>
+      </section>
+
+      <section class="play-layout">
+        <aside class="side-rail left-rail" aria-label="玩家狀態">
+          <article class="panel profile-panel">
+            <div class="panel-title">PROFILE</div>
+            <div class="avatar-row" aria-hidden="true">
+              <span class="mini-avatar avatar-blue">$</span>
+              <span class="mini-avatar avatar-pink">粽</span>
+              <span class="mini-avatar avatar-gold">龍</span>
+            </div>
+            <div class="name-plate">LUCAS FINANCE</div>
+            <button class="primary-button" id="newGameButton" type="button">▶ NEW GAME</button>
+          </article>
+
+          <article class="panel reward-panel">
+            <div class="panel-title">REWARD</div>
+            <div class="reward-row">
+              <span class="reward-token">1000</span>
+              <span>每對配對</span>
+            </div>
+            <div class="reward-row">
+              <span class="reward-token">x2</span>
+              <span>連擊加成</span>
+            </div>
+          </article>
+        </aside>
+
+        <section class="board-panel" aria-label="翻牌遊戲區">
+          <div class="board-header">
+            <div class="panel-title level-title" id="levelBadge">LEVEL 1</div>
+            <div class="festival-mark" aria-label="Lucas 端午金融徽章">
+              <span class="festival-coin">$</span>
+              <span class="festival-name">Lucas</span>
+              <span class="festival-leaf"></span>
+            </div>
+            <div class="stars" aria-hidden="true">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+            <p id="roundText">2 x 2 ｜ 2 對</p>
+          </div>
+
+          <div class="message-bar" id="messageBar">準備記住牌面</div>
+          <div class="board-wrap">
+            <div class="game-board" id="gameBoard" aria-label="卡牌區"></div>
+          </div>
+
+          <div class="board-footer">
+            <div>
+              <span>已配對</span>
+              <strong id="matchedText">0/2</strong>
+            </div>
+            <div>
+              <span>翻錯</span>
+              <strong id="missText">0</strong>
+            </div>
+            <div>
+              <span>連擊</span>
+              <strong id="streakText">0</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="side-rail right-rail" aria-label="關卡與任務">
+          <article class="panel daily-panel">
+            <div class="panel-title">LEVELS</div>
+            <div class="level-grid" id="levelGrid"></div>
+          </article>
+
+          <article class="panel mission-panel">
+            <div class="panel-title">MISSIONS</div>
+            <div class="mission-row">
+              <span class="mission-icon">★</span>
+              <div>
+                <strong>DUANWU</strong>
+                <small>完成本關</small>
+              </div>
+            </div>
+            <div class="mission-row">
+              <span class="mission-icon coin">S</span>
+              <div>
+                <strong>FINANCE</strong>
+                <small>分數累積</small>
+              </div>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <div class="modal-backdrop hidden" id="modal">
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="panel-title" id="modalKicker">LEVEL WIN</div>
+        <div class="win-stars" aria-hidden="true">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+        </div>
+        <h2 id="modalTitle">第 1 關完成</h2>
+        <p id="modalText">分數 +2000</p>
+        <div class="modal-actions">
+          <button class="danger-button" id="quitButton" type="button">✕ 結束</button>
+          <button class="primary-button" id="continueButton" type="button">✓ 下一關</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js?v=1"></script>
+  </body>
+</html>
