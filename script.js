@@ -46,6 +46,17 @@ const levels = [
 
 const STORAGE_KEY = "first-international-memory-progress-v1";
 
+const challengeMessages = [
+  "恭喜過關！財富不是一夜誕生，而是一連串正確決策的結果。",
+  "恭喜完成挑戰！今天解鎖的是關卡，未來解鎖的是財務自由。",
+  "勝利達成！就像巴菲特說的，讓時間站在你這邊，你就離成功更近一步。",
+  "挑戰成功！複利就像遊戲經驗值，每一次累積都在放大未來。",
+  "恭喜升級！配置資產就像配置隊伍，選對角色才能贏得最後勝利。",
+  "恭喜突破！真正的高手，不是猜對下一步，而是提前準備好每一步。",
+  "恭喜解鎖新成就！離財務自由最近的人，往往是最早開始規劃的人。",
+  "挑戰成功！最有價值的投資，永遠是你自己成長的能力。"
+];
+
 const state = {
   levelIndex: 0,
   score: 0,
@@ -78,6 +89,7 @@ const els = {
   modalKicker: document.querySelector("#modalKicker"),
   modalTitle: document.querySelector("#modalTitle"),
   modalText: document.querySelector("#modalText"),
+  challengeCopy: document.querySelector("#challengeCopy"),
   modalBrief: document.querySelector("#modalBrief"),
   continueButton: document.querySelector("#continueButton"),
   quitButton: document.querySelector("#quitButton"),
@@ -626,6 +638,7 @@ function showLevelWin(timeBonus) {
   const nextCardCount = nextPairCount * 2;
   els.modalTitle.textContent = isLast ? "FINAL LEVEL" : `LEVEL ${nextLevelIndex + 1}`;
   els.modalText.textContent = `目前分數 ${state.score.toLocaleString("en-US")} ｜ 時間獎勵 +${timeBonus.toLocaleString("en-US")}`;
+  els.challengeCopy.textContent = challengeMessages[state.levelIndex] || challengeMessages[challengeMessages.length - 1];
   els.modalBrief.textContent = isLast
     ? `全部關卡完成 ｜ 最終分數 ${state.score.toLocaleString("en-US")}`
     : `下一關 ${nextLevel.rows} x ${nextLevel.cols} ｜ ${nextCardCount} 張 ｜ 限時 ${nextLevel.time} 秒`;
@@ -642,6 +655,7 @@ function endGame(kicker, title, text) {
   els.modalKicker.textContent = kicker;
   els.modalTitle.textContent = title;
   els.modalText.textContent = text;
+  els.challengeCopy.textContent = "再挑戰一次，把每一步都準備好。";
   els.modalBrief.textContent = `目前分數 ${state.score.toLocaleString("en-US")}`;
   els.continueButton.textContent = "✓ 重新開始";
   els.modal.classList.remove("hidden");
