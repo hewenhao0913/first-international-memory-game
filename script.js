@@ -8,9 +8,14 @@ const symbols = [
   { id: "krw", name: "韓元", role: "KRW", label: "₩", bg: "#f7e08d", accent: "#2f72b8", kind: "currency" },
   { id: "policy", name: "保單", role: "Policy", label: "保", bg: "#e8f5b6", accent: "#2f8f60", kind: "policy" },
   { id: "hong-kong", name: "香港", role: "HK", label: "HK", bg: "#ffd7a8", accent: "#c74631", kind: "hongKong" },
-  { id: "lucas", name: "Lucas", role: "英文名", label: "Lucas", bg: "#ffe4a8", accent: "#ba5a28", kind: "lucas" },
+  { id: "lucas", name: "Lucas", role: "第一國際創辦人", label: "Lucas", bg: "#ffe4a8", accent: "#ba5a28", kind: "lucas" },
   { id: "zongzi", name: "肉粽", role: "端午節", label: "粽", bg: "#cfe88c", accent: "#3f7f45", kind: "zongzi" },
   { id: "dragon-boat", name: "龍舟", role: "端午節", label: "龍", bg: "#ffd176", accent: "#c83f2f", kind: "dragonBoat" },
+  { id: "golden-egg", name: "金雞蛋", role: "Golden Egg", label: "蛋", bg: "#ffe69a", accent: "#c98200", kind: "goldenEgg" },
+  { id: "us-dollar", name: "美金", role: "US Dollar", label: "US$", bg: "#dff1cf", accent: "#2f7a55", kind: "dollarBill" },
+  { id: "triangle-zongzi", name: "三角粽", role: "Duanwu", label: "粽", bg: "#cfe88c", accent: "#3f7f45", kind: "triangleZongzi" },
+  { id: "dragon-head", name: "龍頭", role: "Dragon", label: "龍", bg: "#ffd176", accent: "#c83f2f", kind: "dragonHead" },
+  { id: "aud", name: "澳幣", role: "AUD", label: "A$", bg: "#f8df9a", accent: "#2f7a70", kind: "currency" },
   { id: "gold-ingot", name: "金元寶", role: "財富", label: "寶", bg: "#ffe07f", accent: "#c98200", kind: "ingot" },
   { id: "chart", name: "成長線", role: "投資", label: "↗", bg: "#e8f5b6", accent: "#2f8f60", kind: "chart" },
   { id: "bank", name: "銀行", role: "金融", label: "Bank", bg: "#fff0b8", accent: "#8a6121", kind: "bank" },
@@ -117,6 +122,37 @@ function symbolSvg(item) {
       <circle cx="98" cy="61" r="5" fill="#fff7d7"/>
       <path d="M38 75h47" stroke="#fff7d7" stroke-width="7" stroke-linecap="round"/>
       <path d="M34 112c21 8 47 8 68 0" stroke="#356d77" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+    `,
+    goldenEgg: `
+      <ellipse cx="70" cy="72" rx="36" ry="48" fill="#f2a900" stroke="#fff0a6" stroke-width="8"/>
+      <ellipse cx="58" cy="52" rx="13" ry="18" fill="#fff6c7" opacity="0.7"/>
+      <path d="M38 105c17 12 44 14 65 1" fill="none" stroke="#b77400" stroke-width="7" stroke-linecap="round"/>
+      <path d="M47 34c10-12 26-16 43-8" fill="none" stroke="#fff7d7" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+      <text x="68" y="126" text-anchor="middle" font-size="17" font-weight="900" fill="#a85d00" font-family="Arial Rounded MT Bold, Arial">金雞蛋</text>
+    `,
+    dollarBill: `
+      <rect x="22" y="40" width="92" height="58" rx="10" fill="#dff1cf" stroke="${accent}" stroke-width="6"/>
+      <circle cx="68" cy="69" r="18" fill="#fff7d7" stroke="${accent}" stroke-width="5"/>
+      <text x="68" y="80" text-anchor="middle" font-size="31" font-weight="900" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">$</text>
+      <circle cx="40" cy="69" r="7" fill="${accent}" opacity="0.8"/>
+      <circle cx="96" cy="69" r="7" fill="${accent}" opacity="0.8"/>
+      <text x="68" y="121" text-anchor="middle" font-size="18" font-weight="900" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">美金</text>
+    `,
+    triangleZongzi: `
+      <path d="M68 17 116 108H20L68 17z" fill="#2f7a46" stroke="#fff6c7" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M68 29 98 96H38L68 29z" fill="#b8d66a"/>
+      <path d="M34 103 68 18 102 103" fill="none" stroke="#5c9b4a" stroke-width="5" opacity="0.7"/>
+      <path d="M30 104c22-24 47-43 79-60" fill="none" stroke="#fff2cf" stroke-width="7" stroke-linecap="round"/>
+      <text x="68" y="121" text-anchor="middle" font-size="16" font-weight="900" fill="#ffffff" font-family="Arial Rounded MT Bold, Arial">三角粽</text>
+    `,
+    dragonHead: `
+      <path d="M31 78c3-27 22-45 49-43 17 1 30 10 39 26-13-5-23-4-31 2 14 7 22 18 23 34-18-7-32-6-44 3-17 12-34 6-36-22z" fill="#c83f2f"/>
+      <path d="M47 53c-4-12-1-23 10-32 0 14 6 22 18 26" fill="#f2a900"/>
+      <path d="M83 49c9-14 22-18 38-13-12 8-17 17-16 29" fill="#f2a900"/>
+      <circle cx="84" cy="67" r="8" fill="#fff7d7"/>
+      <circle cx="86" cy="67" r="3.5" fill="#253326"/>
+      <path d="M48 83c17 8 35 8 53 0" fill="none" stroke="#fff7d7" stroke-width="7" stroke-linecap="round"/>
+      <path d="M40 100c16 11 36 13 58 5" fill="none" stroke="#2f7a55" stroke-width="6" stroke-linecap="round"/>
     `,
     ingot: `
       <path d="M26 83c8-24 20-35 42-35 21 0 35 11 43 35-8 18-24 27-43 27-20 0-34-9-42-27z" fill="#f2a900"/>
