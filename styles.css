@@ -1127,8 +1127,9 @@ button {
 
 @media (max-width: 720px) {
   .game-shell {
-    width: 100vw;
+    width: min(100vw, 430px);
     min-height: 100dvh;
+    margin: 0 auto;
     padding: 6px 6px 4px;
   }
 
@@ -1137,6 +1138,13 @@ button {
     gap: 4px;
     width: 100%;
     margin: 0 auto 4px;
+  }
+
+  .play-layout,
+  .purpose-line {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .brand-badge {
