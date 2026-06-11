@@ -7,7 +7,7 @@
 - 本機路徑：`/Users/hewenhao/Documents/First International/memory-first-international`
 - GitHub Pages：`https://hewenhao0913.github.io/first-international-memory-game/`
 - 最新測試連結格式：`https://hewenhao0913.github.io/first-international-memory-game/?v=版本號`
-- 目前快取版本號：`v=21`
+- 目前快取版本號：`v=22`
 
 ## 發布方式
 
@@ -27,7 +27,7 @@ cd "/Users/hewenhao/Documents/First International/memory-first-international" &&
 ## 目前遊戲方向
 
 - 遊戲名稱與主標題：
-  - `翻牌靠眼力    理財靠實力`
+  - `翻牌靠眼力・理財靠實力`
   - `第一國際端午記憶挑戰賽`
 - 視覺風格：金色、深咖啡、橘紅、端午節、金融感。
 - 要顯示第一國際 Logo 與大光扶輪社 Logo。
