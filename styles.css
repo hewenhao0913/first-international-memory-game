@@ -1424,11 +1424,18 @@ button {
 
   .purpose-line {
     margin-top: 6px;
-    padding: 6px 7px;
+    padding: 7px 8px;
     border-radius: 12px;
-    font-size: clamp(8px, 2.05vw, 11px);
+    font-size: clamp(11px, 3.05vw, 15px);
     line-height: 1.2;
     white-space: nowrap;
+  }
+
+  main > .purpose-line {
+    width: 100%;
+    text-align: justify;
+    text-align-last: justify;
+    overflow: hidden;
   }
 
   .modal-backdrop {
