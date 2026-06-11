@@ -1130,7 +1130,7 @@ button {
     width: min(100vw, 430px);
     min-height: 100dvh;
     margin: 0 auto;
-    padding: 6px 6px 4px;
+    padding: 6px 6px max(88px, calc(env(safe-area-inset-bottom) + 74px));
   }
 
   .top-bar {
@@ -1158,10 +1158,21 @@ button {
   }
 
   .brand-logo-pair {
+    display: grid;
+    place-items: center;
     width: 82px;
     height: 44px;
     border-radius: 12px;
-    padding: 3px 5px;
+    padding: 4px 6px;
+  }
+
+  .brand-logo-pair img {
+    width: auto;
+    height: auto;
+    max-width: 68px;
+    max-height: 34px;
+    object-fit: contain;
+    object-position: center;
   }
 
   .brand-badge p {
@@ -1395,7 +1406,7 @@ button {
   .board-footer {
     gap: 4px;
     margin: 5px -8px -8px;
-    padding: 6px 6px 8px;
+    padding: 6px 6px 12px;
   }
 
   .board-footer::before {

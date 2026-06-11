@@ -7,7 +7,7 @@
 - 本機路徑：`/Users/hewenhao/Documents/First International/memory-first-international`
 - GitHub Pages：`https://hewenhao0913.github.io/first-international-memory-game/`
 - 最新測試連結格式：`https://hewenhao0913.github.io/first-international-memory-game/?v=版本號`
-- 目前快取版本號：`v=25`
+- 目前快取版本號：`v=26`
 
 ## 發布方式
 
