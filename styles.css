@@ -1222,8 +1222,11 @@ button {
   }
 
   .coin-pill strong {
-    font-size: clamp(28px, 8.5vw, 36px);
-    letter-spacing: 0.2px;
+    font-size: clamp(22px, 6.5vw, 28px);
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
   }
 
   .icon-button {
