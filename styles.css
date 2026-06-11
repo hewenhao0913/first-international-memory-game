@@ -117,15 +117,27 @@ button {
 }
 
 .brand-badge h1 {
+  display: inline-grid;
   color: #ffffff;
   font-size: clamp(22px, 2.65vw, 34px);
   line-height: 1.15;
   text-shadow: 0 3px 0 rgba(68, 31, 18, 0.46), 0 9px 18px rgba(26, 12, 8, 0.26);
 }
 
-.brand-badge h1 span {
+.brand-badge h1 .title-line {
   display: block;
   white-space: nowrap;
+}
+
+.brand-badge h1 .title-line-split {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.brand-badge h1 .title-line-split span {
+  display: inline;
 }
 
 .stat-strip {
@@ -1153,8 +1165,12 @@ button {
     white-space: normal;
   }
 
-  .brand-badge h1 span {
-    white-space: normal;
+  .brand-badge h1 .title-line {
+    white-space: nowrap;
+  }
+
+  .brand-badge h1 .title-line-split {
+    gap: 12px;
   }
 
   .stat-strip {
