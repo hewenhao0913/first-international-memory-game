@@ -944,7 +944,7 @@ button {
   padding: 12px 16px;
   border-radius: 20px;
   color: #7a481b;
-  font-size: clamp(15px, 3.6vw, 18px);
+  font-size: clamp(20px, 4.6vw, 28px);
   font-weight: 900;
   background: #fff4c9;
   border: 3px solid #ffffff;
@@ -970,7 +970,13 @@ button {
   color: #6f431d;
   background: rgba(255, 244, 201, 0.72);
   border-color: rgba(139, 85, 24, 0.22);
-  font-size: 13px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.modal-purpose .purpose-heading,
+.modal-purpose .purpose-body {
+  display: block;
 }
 
 .modal-backdrop.level-briefing .modal-panel {
@@ -1029,8 +1035,7 @@ button {
 }
 
 .modal-backdrop.level-briefing .modal-purpose {
-  width: min(100%, 680px);
-  font-size: 24px;
+  display: none;
 }
 
 .modal-backdrop.level-briefing .modal-brief {
@@ -1496,27 +1501,27 @@ button {
   .modal-backdrop.level-briefing .challenge-copy {
     width: 100%;
     max-width: 100%;
-    padding: 7px 9px;
+    padding: 8px 10px;
     border-radius: 12px;
-    font-size: 13px;
-    line-height: 1.16;
+    font-size: 16px;
+    line-height: 1.22;
   }
 
   .modal-brief {
     width: 100%;
     max-width: 100%;
-    padding: 4px 7px;
-    border-radius: 10px;
-    font-size: 10px;
-    line-height: 1.15;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 1.18;
   }
 
   .modal-purpose {
     width: 100%;
     max-width: 100%;
-    padding: 5px 6px;
-    font-size: 10px;
-    line-height: 1.15;
+    padding: 8px 10px;
+    font-size: 16px;
+    line-height: 1.3;
     white-space: normal;
     overflow-wrap: anywhere;
   }
@@ -1576,9 +1581,9 @@ button {
   }
 
   .modal-backdrop.level-briefing .challenge-copy {
-    padding: 5px 7px;
-    font-size: 11px;
-    line-height: 1.12;
+    padding: 6px 8px;
+    font-size: 13px;
+    line-height: 1.16;
   }
 
   .modal-backdrop.level-briefing .modal-brief {
@@ -1588,9 +1593,7 @@ button {
   }
 
   .modal-backdrop.level-briefing .modal-purpose {
-    padding: 3px 5px;
-    font-size: 8px;
-    line-height: 1.1;
+    display: none;
   }
 
   .modal-backdrop.level-briefing .modal-actions {
