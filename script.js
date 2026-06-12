@@ -689,7 +689,7 @@ function endGame(kicker, title, text) {
   els.modalText.textContent = text;
   els.challengeCopy.textContent = "再挑戰一次，把每一步都準備好。";
   els.modalBrief.textContent = `目前分數 ${state.score.toLocaleString("en-US")}`;
-  els.continueButton.textContent = "✓ 重新開始";
+  els.continueButton.textContent = "✓ 再來一次";
   els.modal.classList.remove("hidden");
 }
 
@@ -702,7 +702,7 @@ function resetGame() {
 
 els.continueButton.addEventListener("click", () => {
   const completedLast = state.levelIndex === levels.length - 1 && state.completedLevels.has(state.levelIndex);
-  if (els.continueButton.textContent.includes("重新")) {
+  if (els.continueButton.textContent.includes("重新") || els.continueButton.textContent.includes("再來")) {
     startLevel(state.levelIndex);
     return;
   }
@@ -723,5 +723,5 @@ els.pauseButton.addEventListener("click", () => {
   setMessage(state.paused ? "PAUSED" : "繼續翻牌");
 });
 
-loadProgress();
-startLevel(state.levelIndex);
+clearProgress();
+startLevel(0);

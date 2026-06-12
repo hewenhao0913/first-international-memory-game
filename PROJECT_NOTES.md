@@ -7,7 +7,7 @@
 - 本機路徑：`/Users/hewenhao/Documents/First International/memory-first-international`
 - GitHub Pages：`https://hewenhao0913.github.io/first-international-memory-game/`
 - 最新測試連結格式：`https://hewenhao0913.github.io/first-international-memory-game/?v=版本號`
-- 目前快取版本號：`v=26`
+- 目前快取版本號：`v=27`
 
 ## 發布方式
 
@@ -42,8 +42,8 @@ cd "/Users/hewenhao/Documents/First International/memory-first-international" &&
 - 連擊有額外分數。
 - 過關時會依剩餘時間給時間獎勵，目前是每剩 1 秒加 `50` 分。
 - 預覽時間目前每關都是 `3000ms`。
-- 有進度儲存，玩家回來可從目前關卡繼續，不會每次從第一關重來。
-- 進度存在 `localStorage`。
+- 每次從正式連結重新進入都從第一關開始。
+- 遊戲過程仍會寫入暫存進度，但頁面載入時會清除暫存並從第一關開始。
 
 ## 關卡設定
 
