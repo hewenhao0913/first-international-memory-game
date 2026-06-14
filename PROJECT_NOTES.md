@@ -7,7 +7,7 @@
 - 本機路徑：`/Users/hewenhao/Documents/First International/memory-first-international`
 - GitHub Pages：`https://hewenhao0913.github.io/first-international-memory-game/`
 - 最新測試連結格式：`https://hewenhao0913.github.io/first-international-memory-game/?v=版本號`
-- 目前快取版本號：`v=28`
+- 目前快取版本號：`v=29`
 
 ## 發布方式
 
@@ -31,10 +31,10 @@ cd "/Users/hewenhao/Documents/First International/memory-first-international" &&
   - `第一國際端午記憶挑戰賽`
 - 視覺風格：金色、深咖啡、橘紅、端午節、金融感。
 - 要顯示第一國際 Logo 與大光扶輪社 Logo。
-- 翻牌內容包含金融符號、端午元素、Lucas、第一國際圓形 Logo。
+- 翻牌內容包含金融符號、端午元素、Louis、第一國際圓形 Logo。
 - 不要使用虛擬貨幣、股票、債券。
 - 已改為有「保單」「香港」等圖形。
-- Lucas 卡片是男性短髮半身人像，角色文字是「第一國際創辦人」。
+- Louis 卡片是男性短髮半身人像，角色文字是「第一國際創辦人」。
 
 ## 遊戲規則
 

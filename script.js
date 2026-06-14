@@ -8,7 +8,7 @@ const symbols = [
   { id: "krw", name: "韓元", role: "KRW", label: "₩", bg: "#f7e08d", accent: "#2f72b8", kind: "currency" },
   { id: "policy", name: "保單", role: "Policy", label: "保", bg: "#e8f5b6", accent: "#2f8f60", kind: "policy" },
   { id: "hong-kong", name: "香港", role: "HK", label: "HK", bg: "#ffd7a8", accent: "#c74631", kind: "hongKong" },
-  { id: "lucas", name: "Lucas", role: "第一國際創辦人", label: "Lucas", bg: "#ffe4a8", accent: "#ba5a28", kind: "lucas" },
+  { id: "lucas", name: "Louis", role: "第一國際創辦人", label: "Louis", bg: "#ffe4a8", accent: "#ba5a28", kind: "lucas" },
   { id: "first-logo", name: "第一國際", role: "Logo", label: "FI", bg: "#f6d487", accent: "#c49a20", kind: "imageLogo", image: "assets/logos/first-international-round-logo.png" },
   { id: "zongzi", name: "肉粽", role: "端午節", label: "粽", bg: "#cfe88c", accent: "#3f7f45", kind: "zongzi" },
   { id: "dragon-boat", name: "龍舟", role: "端午節", label: "龍", bg: "#ffd176", accent: "#c83f2f", kind: "dragonBoat" },
@@ -129,7 +129,7 @@ function symbolSvg(item) {
       <path d="M46 104c5-18 13-27 22-27s17 9 22 27H46z" fill="#fff7d7"/>
       <path d="M63 78l5 19 6-19" fill="#c49a20"/>
       <rect x="29" y="96" width="78" height="25" rx="12" fill="#fff7d7" stroke="${accent}" stroke-width="4"/>
-      <text x="68" y="114" text-anchor="middle" font-size="23" font-weight="900" text-decoration="none" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">Lucas</text>
+      <text x="68" y="114" text-anchor="middle" font-size="23" font-weight="900" text-decoration="none" fill="${accent}" font-family="Arial Rounded MT Bold, Arial">Louis</text>
     `,
     imageLogo: `
       <image href="${escapeHtml(item.image)}" x="18" y="14" width="100" height="100" preserveAspectRatio="xMidYMid meet"/>
